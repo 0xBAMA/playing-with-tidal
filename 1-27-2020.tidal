@@ -1,0 +1,10 @@
+d1 $ randcat[
+  s "koy" # room 0.4 # size 1.1 # gain 1.2,
+  s "jungbass:6" # room 0.4 # size 1.1 # gain 1.1
+]
+
+d2 $ randcat[
+  s "jazz jazz jazz" # gain 1.2,
+  s "jazz jazz jazz" # gain 1.1,
+  s "jazz jazz jazz" # gain 1.0
+]

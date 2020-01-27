@@ -1,0 +1,138 @@
+-- 1/24/2020
+
+
+--  ______          _     __
+--  | ___ \        | |   /  |
+--  | |_/ /_ _ _ __| |_  `| |
+--  |  __/ _` | '__| __|  | |
+--  | | | (_| | |  | |_  _| |_
+--  \_|  \__,_|_|   \__| \___/
+
+-- so, starting off, we have some different samples, try some different ones
+-- each 'word' refers the the directory, then the :number part tells you which
+-- sample you are getting out of that directory, it loops around at a certian
+-- point, whatever number of files there are, so don't worry about too big
+-- a number or whatever
+
+-- try each one by using shift-enter with that line selected
+
+d1 $ s "808"  --try 3, 5
+d1 $ s "glasstap"
+d1 $ s "moog:1"
+d1 $ s "metal:1"
+d1 $ s "ab:2"   -- try 2, 3, 4, 5, 9
+d1 $ s "crow"
+d1 $ s "ade:10"  --1 is interesting, 2, 3, 4?, 7, 8, 9
+d1 $ s "arp:4"    -- 2
+d1 $ s "jazz:2"
+d1 $ s "kurt:1"
+d1 $ s "armora:6"   -- 6
+d1 $ s "blue:1"
+d1 $ s "erk:1"
+d1 $ s "jungle:4"
+d1 $ s "wind"
+
+d1 $ s "sitar:1"
+d1 $ s "sitar:2"
+d1 $ s "sitar:3"
+d1 $ s "sitar:4"
+d1 $ s "sitar:5"
+
+d1 $ s "tacscan:5" -- 5
+d1 $ s "tablex:1"
+d1 $ s "tech:1"
+d2 $ s "tink:1"
+d2 $ s "tok:1"
+d1 $ s "sax:1"
+d1 $ s "seawolf:1"
+d1 $ s "sheffield:1"
+d1 $ s "short:1"
+d1 $ s "space:1"
+
+
+d1 $ s "hmm"
+d1 $ s "baa2:1"
+d1 $ s "dorkbot:1"
+d1 $ s "fire:1"
+d1 $ s "dork2:1"
+
+
+
+--if you do this line it'll quiet out everything (d1-d16)
+hush
+
+
+
+--  ______          _     _____
+--  | ___ \        | |   / __  \
+--  | |_/ /_ _ _ __| |_  `' / /'
+--  |  __/ _` | '__| __|   / /
+--  | | | (_| | |  | |_  ./ /___
+--  \_|  \__,_|_|   \__| \_____/
+--here I've got some parts set up, using d1-d5
+
+-- these are each called 'orbits' and basically they just loop, but they can
+-- have loops inside of them so they came up with another level up from that
+
+
+
+-- wind
+d1 $ s "wind" -- this works, but will just play the wind effect
+-- to change the behavior, you use these tags - indicated with the hash #
+
+-- '# n (choose[0,3,etc...])' lets the computer randomly pick instead of using "wind:0"
+d1 $ s "wind" # n (choose [0,2,4,5]) # speed 0.375 # room 0.5 # size 0.95 # gain 1.1
+
+
+  -- the 'irand' part functions similarly, but it doesn't have as fine control
+    -- it just goes and picks a number 0-8
+d2 $ s "wind" # n (irand 8) # speed 0.4 # room 0.4 # size 0.9 # gain 1.2
+
+
+
+
+-- noises
+  --note that everything here is wrapped up in the randcat block
+  -- this makes each of the comma separated parts get randomly picked as the
+  -- last one ends -- also note you have to select all the lines from [ to ]
+  -- plus the d3 part to execute it with shift-enter
+
+d3 $ randcat[
+ s "moog ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.625 # gain 0.7 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.5    # gain 0.7 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.375   # gain 1.3# room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.25    # gain 1.4 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.125   # gain 1.4 # room 0.5 # size 0.8
+]
+
+d1 $ randcat[
+  s "speechless ~ ~ ~" # n (irand 9),
+  s "speech" # n (choose [2,3,4,5,6,7]) # room 0.6 # size 1.2
+]
+
+
+d1 $ silence
+
+-- drums
+  -- try putting in different values for the first zero in the stut' part to
+  -- see what it does - also the 'up' part pitch shifts up in semitones, in order
+d4 $ stut' 3 0.032 (|/| speed 1.0) $ s "jazz" # n (choose [2,36]) # up "4 7 3 5 2 3 4 3 3 1" # gain 0.7
+
+
+
+
+d1 $ randcat[
+ s "koy" # room 0.4 # size 1.1 # gain 1.2,
+ s "jungbass:6" # room 0.4 # size 1.1 # gain 1.1
+]
+
+
+
+-- glass tapping - this part is kind of too much, so you'd want to silence it
+d5 $ s "glasstap:3 ~ ~ fire:1 " # gain 1.5 # room 0.4 # size 0.8
+
+-- and you'd do that with this line, which silences only d5
+d5 $ silence
+
+hush -- this quiets all channels, d1-d16

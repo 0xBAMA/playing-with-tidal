@@ -217,16 +217,11 @@ d1 $ s "psr:1"
 d1 $ s "rave:1"
 d1 $ s "ravemono:1"
 d1 $ s "rm:1"
-d1 $ s "sax:1"
-d1 $ s "seawolf:1"
 d1 $ s "sequential:1"
 d1 $ s "sf:1"
-d1 $ s "sheffield:1"
-d1 $ s "short:1"
 d1 $ s "sid:1"
 d1 $ s "sine:1"
 d1 $ s "sn:1"
-d1 $ s "space:1"
 d1 $ s "speechless:1"
 d1 $ s "speedupdown:1"
 d1 $ s "stab:1"
@@ -236,11 +231,9 @@ d1 $ s "sugar:1"
 d1 $ s "sundance:1"
 d1 $ s "tabla:1"
 d1 $ s "tabla2:1"
-d1 $ s "tablex:1"
-d1 $ s "tech:1"
+
 d1 $ s "techno:1"
-d1 $ s "tink:1"
-d1 $ s "tok:1"
+
 d1 $ s "trump:1"
 d1 $ s "uxay:1"
 d1 $ s "v:1"
@@ -267,35 +260,64 @@ d1 $ s "yeah:2"
 
 -- 1/24/2020
 
-d1 $ s "hmm"
 d1 $ s "808"  --try 3, 5
-d1 $ s "metal:1"
+d1 $ s "glasstap"
 d1 $ s "moog:1"
-d1 $ s "sitar:1"
+d1 $ s "metal:1"
 d1 $ s "ab:2"   -- try 2, 3, 4, 5, 9
 d1 $ s "crow"
-d1 $ s "tacscan:5" -- 5
 d1 $ s "ade:10"  --1 is interesting, 2, 3, 4?, 7, 8, 9
 d1 $ s "arp:4"    -- 2
 d1 $ s "jazz:2"
 d1 $ s "kurt:1"
 d1 $ s "armora:3"   -- 6
-d1 $ s "baa2:1"
 d1 $ s "blue:1"
-d1 $ s "dork2:1"
 d1 $ s "erk:1"
 d1 $ s "jungle:4"
+d1 $ s "wind"
+d1 $ s "sitar:1"
+d1 $ s "tacscan:5" -- 5
+d1 $ s "tablex:1"
+d1 $ s "tech:1"
+d1 $ s "tink:1"
+d1 $ s "tok:1"
+d1 $ s "sax:1"
+d1 $ s "seawolf:1"
+d1 $ s "sheffield:1"
+d1 $ s "short:1"
+d1 $ s "space:1"
+
+
+d1 $ s "hmm"
+d1 $ s "baa2:1"
 d1 $ s "dorkbot:1"
 d1 $ s "fire:1"
-d1 $ s "glasstap:1"
+d1 $ s "dork2:1"
 
-d1 $ s "wind" # n (choose [0,2,4,5]) # speed 0.375 # room 0.5 # size 0.95 # gain 1.1
 
-d2 $ s "moog ~ ~ ~" # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8 
-d2 $ s "moog ~ ~ ~" # n (irand 8) # speed 0.625 # gain 0.7 # room 0.5 # size 0.8
-d2 $ s "moog ~ ~ ~" # n (irand 8) # speed 0.5    # gain 0.7 # room 0.5 # size 0.8
-d2 $ s "moog ~ ~ ~" # n (irand 8) # speed 0.375   # gain 0.7 # room 0.5 # size 0.8
-d2 $ s "moog ~ ~ ~" # n (irand 8) # speed 0.25    # gain 0.7 # room 0.5 # size 0.8
-d2 $ s "moog ~ ~ ~" # n (irand 8) # speed 0.125   # gain 0.7 # room 0.5 # size 0.8
+-- wind
+d1 $ s "wind" # n (choose [0,2,4,5]) # speed 0.375 # room 0.5 # size 0.95 # gain 0.8
+d2 $ s "wind" # n (irand 8) # speed 0.4 # room 0.4 # size 0.9 # gain 0.9
 
-d3 $ s "wind" # n (irand 8) # speed 0.4 # room 0.4 # size 0.9 # gain 1.3
+-- noises
+d3 $ randcat[
+ s "moog ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.625 # gain 0.7 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.5    # gain 0.7 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.375   # gain 1.3# room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.25    # gain 1.7 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.125   # gain 1.4 # room 0.5 # size 0.8
+]
+
+-- drums
+d4 $ stut' 0 0.032 (|/| speed 1.0) $ s "jazz" # n (choose [2,36]) # up "4 7 3 5 2 3 4 3 3 1"
+
+hush
+
+-- glass tapping
+d5 $ s "glasstap:3 ~ ~ fire:1 " # gain 0.2 # room 0.4 # size 0.8
+d5 $ silence
+
+
+-- d1 $ cat
+-- d1 $ randcat

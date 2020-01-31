@@ -8,3 +8,38 @@ d2 $ randcat[
   s "jazz jazz jazz" # gain 1.1,
   s "jazz jazz jazz" # gain 1.0
 ]
+
+
+d1 $ randcat[
+  s "koy" # room 0.4 # size 1.1 # gain 0.8,
+  s "jungbass:6" # room 0.4 # size 1.1 # gain 0.8,
+  s "~",
+  s "~",
+  s "~"
+]
+
+d2 $ randcat[
+  s "birds",
+  s "birds:2",
+  s "birds:3",
+  s "birds:4",
+  s "birds:5",
+  s "birds3 808oh 808oh",
+  s "808oh moog",
+  s "808oh ~ 808oh",
+  s "808oh ~ 808oh ~",
+  s "~",
+  s "~",
+  s "~"
+]
+hush
+
+once $s "koy" # gain 2.2 # size 0.5 # room 0.9
+
+
+
+
+hush
+once $ s "new:3" # gain 1.0
+
+-- //1/29

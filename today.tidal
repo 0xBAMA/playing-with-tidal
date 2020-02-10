@@ -3,7 +3,9 @@ hush
 d1 $ sound (every 6 (fast 8) "808*2 [808:2? [<808oh? 808sd?> < ~ ~ 808> _ _ <808oh*2 808oh?>] 808oh]")
   # n (irand 8) # speed 0.75 # gain 0.5 # room 0.6 # size 0.9
 
-d1 $ s "linnhats _ linnhats _ linnhats _ " # n (irand 8) # gain 0.5 # room 0.6 # size 0.9
+d1 $ s "linnhats _ linnhats _ <linnhats*2 linnhats 808> _ " # n (irand 8) # gain 0.3 # room 0.6 # size 0.9
+d1 $ s "linnhats _ linnhats _ <linnhats*2 linnhats 808> _ " # n (irand 8) # gain 0.4 # room 0.6 # size 0.9
+d1 $ s "linnhats _ linnhats _ <linnhats*2 linnhats 808> _ " # n (irand 8) # gain 0.5 # room 0.6 # size 0.9
 
 d2 $ slowcat[
  s "moog*3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,

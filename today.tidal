@@ -1,6 +1,6 @@
 hush
 
-d1 $ sound (every 4 (fast 4) "808*2 [808:2? [808oh? _ _ 808oh*2 808oh?] 808oh]")
+d1 $ sound (every 4 (fast 4) "808*2 [808:2? [<808oh? 808sd?> < ~ ~ 808> _ _ <808oh*2 808oh?>] 808oh]")
   # n (irand 8) # speed 0.75 # gain 0.5 # room 0.6 # size 0.9
 
 d2 $ slowcat[
@@ -13,10 +13,13 @@ d2 $ slowcat[
 ]
 
 d3 $ randcat[
- s "moog:4*3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.5 # room 0.5 # size 0.8,
- s "moog:2*3 ~ ~ " # n (irand 8) # speed 0.625 # gain 0.6 # room 0.5 # size 0.8,
+ s "moog:4/3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.5 # room 0.5 # size 0.8,
+ s "moog:2/3 ~ ~ " # n (irand 8) # speed 0.625 # gain 0.6 # room 0.5 # size 0.8,
  s "moog:5 ~ ~ "   # n (irand 8) # speed 0.5    # gain 0.7 # room 0.5 # size 0.8,
  s "moog:2/3 ~ ~ " # n (irand 8) # speed 0.375   # gain 0.9 # room 0.5 # size 0.8,
  s "moog:9*3 ~ ~ " # n (irand 8) # speed 0.25    # gain 0.8 # room 0.5 # size 0.8,
  s "moog:7/3 ~ ~ " # n (irand 8) # speed 0.125   # gain 0.9 # room 0.5 # size 0.8
 ]
+
+
+hush

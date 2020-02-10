@@ -1,6 +1,6 @@
 hush
 
-d1 $ sound (every 4 (fast 4) "808*2 [808:2? [<808oh? 808sd?> < ~ ~ 808> _ _ <808oh*2 808oh?>] 808oh]")
+d1 $ sound (every 6 (fast 8) "808*2 [808:2? [<808oh? 808sd?> < ~ ~ 808> _ _ <808oh*2 808oh?>] 808oh]")
   # n (irand 8) # speed 0.75 # gain 0.5 # room 0.6 # size 0.9
 
 d2 $ slowcat[

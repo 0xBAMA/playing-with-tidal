@@ -1,0 +1,5 @@
+d2 $ slowcat[
+ s "moog@3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,
+ s "moog ~ ~ " # n (irand 8) # speed 0.125   # gain 1.2 # room 0.5 # size 0.8,
+ s "moog moog moog" # n (irand 3) # gain 0.9
+]

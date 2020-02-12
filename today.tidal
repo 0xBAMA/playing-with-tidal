@@ -5,7 +5,7 @@ d1 $ sound (every 6 (fast 8) "808*2 [808:2? [<808oh? 808sd?> < ~ ~ 808> _ _ <808
 
 d1 $ s "linnhats _ linnhats _ <linnhats*2 linnhats 808> _ " # n (irand 8) # gain 0.3 # room 0.6 # size 0.9
 d1 $ s "linnhats _ linnhats _ <linnhats*2 linnhats 808> _ " # n (irand 8) # gain 0.4 # room 0.6 # size 0.9
-d1 $ s "linnhats _ linnhats _ <linnhats*2 linnhats 808> _ " # n (irand 8) # gain 0.5 # room 0.6 # size 0.9
+d1 $ s "linnhats _ linnhats _ <linnhats*2 linnhats 808 jazz future> _ " # n (irand 8) # gain 0.75 # room 0.6 # size 0.9
 
 d2 $ slowcat[
  s "moog*3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,
@@ -17,9 +17,9 @@ d2 $ slowcat[
 ]
 
 d3 $ randcat[
- s "moog:4/3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.5 # room 0.5 # size 0.8,
- s "moog:2/3 ~ ~ " # n (irand 8) # speed 0.625 # gain 0.6 # room 0.5 # size 0.8,
- s "moog:5 ~ ~ "   # n (irand 8) # speed 0.5    # gain 0.7 # room 0.5 # size 0.8,
+ s "moog:4/3 ~ ~ " # n (irand 8) # speed 0.75     # gain 0.5 # room 0.5 # size 0.8,
+ s "moog:2/3 ~ ~ " # n (irand 8) # speed 0.625    # gain 0.6 # room 0.5 # size 0.8,
+ s "moog:5 ~ ~ "   # n (irand 8) # speed 0.5      # gain 0.7 # room 0.5 # size 0.8,
  s "moog:2/3 ~ ~ " # n (irand 8) # speed 0.375   # gain 0.9 # room 0.5 # size 0.8,
  s "moog:9*3 ~ ~ " # n (irand 8) # speed 0.25    # gain 0.8 # room 0.5 # size 0.8,
  s "moog:7/3 ~ ~ " # n (irand 8) # speed 0.125   # gain 0.9 # room 0.5 # size 0.8
@@ -27,3 +27,10 @@ d3 $ randcat[
 
 
 hush
+
+
+d1 $ s "metal:1 ~ ~ glasstap <glasstap:2 glasstap:3 metal:2>" # n (irand 7) #gain 1.5
+d1 $ silence
+
+d2 $ s "moog:1 ~ ~ glasstap <moog:2 moog:3 moog:4>" # n (irand 9) #gain 1.2
+d2 $ silence

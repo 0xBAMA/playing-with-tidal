@@ -1,0 +1,13 @@
+d1 $ randcat[
+  slowcat[  s "jazz:4 ~ ~ jazz:3 ~" #gain 1.4, s "jazz:4 ~ jazz:5 ~" #gain 1.4],
+  slowcat[  s "jazz:4 ~ ~ jazz:5 ~" #gain 1.4, s "jazz:4 ~ jazz:5 ~" #gain 1.4],
+  slowcat[  s "jazz:4 ~ ~ jazz:5 ~" #gain 1.4, s "jazz:4 ~ jazz:5 ~ ~" #gain 1.4]
+]
+
+d2 $ randcat[
+  s "moog*3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,
+  s "moog*3 ~ ~ " # n (irand 8) # speed 0.625 # gain 0.7 # room 0.5 # size 0.8,
+  s "moog ~ ~ "   # n (irand 8) # speed 0.5    # gain 0.7 # room 0.5 # size 0.8
+] # delaytime 0.25 # delay "0.8" # lock 1 # orbit 1
+
+d3 $ s "bd bd"

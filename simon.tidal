@@ -24,10 +24,10 @@ d1 $ s "ab:2"     -- try 2, 3, 4, 5, 9
 d1 $ s "crow"
 d1 $ s "ade:10"   --1 is interesting, 2, 3, 4?, 7, 8, 9
 d1 $ s "arp:4"    -- 2
-d1 $ s "jazz:2"
+d1 $ s "jazz:4 ~ ~ jazz:5" # gain 1.4
 d1 $ s "kurt:1"
 d1 $ s "armora:6"   -- 6
-d1 $ s "blue:1"
+d1 $ s "blue"
 d1 $ s "erk:1"
 d1 $ s "jungle:4"
 d1 $ s "wind"
@@ -36,7 +36,7 @@ d1 $ s "sitar:1"
 d1 $ s "sitar:2"
 d1 $ s "sitar:3"
 d1 $ s "sitar:4"
-d1 $ s "sitar:5" # gain 1.3
+d1 $ s "sitar" # n (irand 9) # gain 1.00
 
 d1 $ s "tacscan:5" -- 5
 d1 $ s "tablex:1"

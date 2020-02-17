@@ -1,9 +1,17 @@
-d1 $ randcat[
-  slowcat[  s "jazz:4 ~ ~ jazz:3 ~" #gain 1.4, s "jazz:4 ~ jazz:5 ~" #gain 1.4],
-  slowcat[  s "jazz:4 ~ ~ jazz:5 ~" #gain 1.4, s "jazz:4 ~ jazz:5 ~" #gain 1.4],
-  slowcat[  s "jazz:4 ~ ~ jazz:5 ~" #gain 1.4, s "jazz:4 ~ jazz:5 ~ ~" #gain 1.4],
-  silence
-]
+-- interesting sequencing capability
+
+
+do
+{
+  resetCycles;
+  d1 $ rotL 4 $ seqP [
+    (0, 12, sound "bd bd*2"),
+    (4, 12, sound "hh*2 [sn cp] cp future*4"),
+    (8, 12, sound (samples "arpy*8" (run 16)))
+  ]
+}
+
+
 
 d2 $ randcat[
   s "moog*3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,
@@ -13,8 +21,7 @@ d2 $ randcat[
   silence
 ] # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1
 
-d3 $ s "bd bd" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1
-
+d3 $ s "bd bd*2" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1
 
 
 hush

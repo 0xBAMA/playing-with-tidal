@@ -7,17 +7,18 @@ do
   d1 $ rotL 4 $ seqP [
     (0, 140, sound "bd bd*2"),
     (40, 100, sound "hh hh hh"),
-    (80, 1, sound "koy")
-  ]
+    (50, 1, sound "koy")
+  ] # delaytime 0.75 # delay "0.65"
 }
 
 
+setcps 1.2
+setcps 2.4
 
 d2 $ randcat[
   s "moog*3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,
   s "moog*3 ~ ~ " # n (irand 8) # speed 0.625 # gain 0.7 # room 0.5 # size 0.8,
-  s "moog ~ ~ "   # n (irand 8) # speed 0.5    # gain 0.7 # room 0.5 # size 0.8,
-  silence,
+  s "moog*3 ~ ~ " # n (irand 8) # speed 0.5    # gain 0.7 # room 0.5 # size 0.8,
   silence
 ] # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1
 

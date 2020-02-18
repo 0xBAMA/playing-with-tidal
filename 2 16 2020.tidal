@@ -5,9 +5,9 @@ do
 {
   resetCycles;
   d1 $ rotL 4 $ seqP [
-    (0, 12, sound "bd bd*2"),
-    (4, 12, sound "hh*2 [sn cp] cp future*4"),
-    (8, 12, sound (samples "arpy*8" (run 16)))
+    (0, 140, sound "bd bd*2"),
+    (40, 100, sound "hh hh hh"),
+    (80, 1, sound "koy")
   ]
 }
 

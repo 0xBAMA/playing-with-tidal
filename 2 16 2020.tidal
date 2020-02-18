@@ -11,19 +11,22 @@ do
   ] # delaytime 0.75 # delay "0.65"
 }
 
-
+setcps 0.3
 setcps 1.2
 setcps 1.8
 setcps 2.4
 
 d2 $ randcat[
-  s "moog*3 ~ ~ " # n (irand 8) # speed 0.75  # gain 0.7 # room 0.5 # size 0.8,
-  s "moog*3 ~ ~ " # n (irand 8) # speed 0.625 # gain 0.7 # room 0.5 # size 0.8,
-  s "moog*3 ~ ~ " # n (irand 8) # speed 0.5   # gain 0.7 # room 0.5 # size 0.8,
+  s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.75  # gain 0.7 # room 1.0 # size 1.6,
+  s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.625 # gain 0.7 # room 1.0 # size 1.6,
+  s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.5   # gain 0.7 # room 1.0 # size 1.6,
   silence
 ] # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1
 
 d3 $ s "bd bd*2" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1
+
+d1 $ s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.75  # gain 0.7 # room 0.7 # size 1.2
+
 
 
 hush

@@ -16,6 +16,10 @@ d2 $s "armora:2*4" # up "-4 -6 -2 0" # speed 0.5 # vowel "[a e ~ i o u]/8"
 
 d3 $s "armora:3*3" # up "-4 -6 -2 0" # vowel "[a e ~ i o u]/8" # speed 0.25
 
+
+setcps 0.16
+hush
+
 d4 $s "koy" # vowel "[a e ~ i o u]/8" # speed 0.8 # gain 1.5
 d4 $silence
 

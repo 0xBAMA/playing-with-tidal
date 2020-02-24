@@ -11,21 +11,59 @@ do
   ] # delaytime 0.75 # delay "0.65"
 }
 
-setcps 0.3
+setcps 0.32
 setcps 1.2
 setcps 1.8
 setcps 2.4
 
 d2 $ randcat[
-  s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.75  # gain 0.7 # room 1.0 # size 1.6,
-  s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.625 # gain 0.7 # room 1.0 # size 1.6,
-  s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.5   # gain 0.7 # room 1.0 # size 1.6,
+  s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.75  # gain 0.7 # room 0.4 # size 0.8,
+  s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.625 # gain 0.7 # room 0.4 # size 0.8,
+  -- s "superpiano*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.5   # gain 0.7 # room 0.4 # size 0.8,
   silence
-] # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1
+] # delaytime 0.25 # delay "0.65" # lock 1 # orbit 2
 
-d3 $ s "bd bd*2" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1
 
-d1 $ s "moog*3 ~ ~ " # n (arp "<up down diverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.75  # gain 0.7 # room 0.7 # size 1.2
+d4 $ s "bd([5 3]/2,8)" # delaytime 0.25 # delay "0.65 0.55" # lock 1 # orbit 1
+
+d4 $ s "koy" # delaytime 0.25 # delay "0.65 0.55" # lock 1 # orbit 1 # gain 0.7 # room 0.4 # size 0.8
+d4 $ silence
+
+d1 $ randcat[
+  s "moog*6 ~ ~ " # n (arp "<up down diverge disconverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.85 # gain 0.7 # room 0.6 # size 0.6 # delaytime 0.35 # delay "0.65",
+  s "moog*12 ~ ~ " # n (arp "<up down diverge disconverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.85 # gain 0.7 # room 0.6 # size 0.6 # delaytime 0.35 # delay "0.65",
+  s "moog*12 ~ ~ " # n (arp "<up down diverge disconverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.75 # gain 0.7 # room 0.6 # size 0.6 # delaytime 0.35 # delay "0.65",
+  s "moog*12([5 3 9 10 15]/2,8) ~ ~ " # n (arp "<up down diverge disconverge pinkyup thumbdown>" "<a'm9'8e'7sus4'8>") # speed 0.85 # gain 0.7 # room 0.6 # size 0.6 # delaytime 0.35 # delay "0.65"
+]
+
+
+
+
+
+d1 $ randcat[
+  s "koy" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1 # gain 0.7 # room 0.4 # size 0.8,
+  s "koy" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1 # gain 0.5 # room 0.4 # size 0.8,
+  s "koy" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1 # gain 0.9 # room 0.45 # size 0.8,
+  s "koy" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1 # gain 0.4 # room 0.5 # size 0.8,
+  s "koy" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1 # gain 0.6 # room 0.4 # size 0.8,
+  s "koy" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1 # gain 0.8 # room 0.55 # size 0.8,
+  s "koy" # delaytime 0.25 # delay "0.65" # lock 1 # orbit 1 # gain 0.6 # room 0.4 # size 0.8
+]
+
+
+d3 $ s "bd bd*2 bd bd bd*2" # gain 0.7 # delaytime 0.25 # delay "0.65 0.55" # lock 1 # orbit 1
+
+d2 $ every 2 rev $ s "{bd@7 bd@7 cp@11 cp bd@13 hh hh hh cp@10}%16"
+d2 $ silence
+
+
+d2 $ fast (scramble 4 "7 9 3 5") $ s "bass3:2" |> up (quantise 1 $ range 0 28 perlin)
+d4 $ fast (scramble 4 "7 9 3 5") $ s "bass3:2" |> up (quantise 1 $ range 0 28 perlin)
+d5 $ fast (scramble 4 "7 9 3 5") $ s "bass3:2" |> up (quantise 1 $ range 0 28 perlin)
+
+
+
+
 
 
 

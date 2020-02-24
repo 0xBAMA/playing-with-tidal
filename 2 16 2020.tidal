@@ -51,7 +51,12 @@ d1 $ randcat[
 ]
 
 
+d1 $ s "bd bd*2 bd bd bd*2" # gain 0.7 # delaytime 0.05 # delay "0.65 0.55" # lock 1 # orbit 1
+d2 $ s "bd bd*2 bd bd bd*2" # gain 0.7 # delaytime 0.15 # delay "0.65 0.55" # lock 1 # orbit 1
 d3 $ s "bd bd*2 bd bd bd*2" # gain 0.7 # delaytime 0.25 # delay "0.65 0.55" # lock 1 # orbit 1
+
+d4 $ s "hh hh hh*2 hh hh hh hh*3"
+d4 $ silence
 
 d2 $ every 2 rev $ s "{bd@7 bd@7 cp@11 cp bd@13 hh hh hh cp@10}%16"
 d2 $ silence

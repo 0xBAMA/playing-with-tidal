@@ -85,4 +85,17 @@ d1 $ fast 20 $ struct (binary 205) $ s "koy"
   # speed 1.2
   # pan rand
 
-d2 $ s "bd bd*2 bd bd bd*2" # gain 0.7 # delaytime 0.15 # delay "0.65 0.55" # lock 1 # orbit 1
+
+d2 $ fast 20 $ struct (binary 205) $ s "koy"
+  # attack 0.02 # hold 0.0 # release 0.02
+  # begin (slow (2*20) $ range 0.0 0.4 $ saw)
+  # speed 1.2
+  # pan rand
+
+d3 $ fast 20 $ struct (binary 205) $ s "koy"
+  # attack 0.02 # hold 0.0 # release 0.02
+  # begin (slow (2*20) $ range 0.0 0.4 $ saw)
+  # speed 1.2
+  # pan rand
+
+d4 $ s "bd bd*2 bd bd bd*2" # gain 0.7 # delaytime 0.15 # delay "0.65 0.55" # lock 1 # orbit 1
